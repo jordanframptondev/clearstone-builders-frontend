@@ -5,7 +5,6 @@ import { toHTML } from "@portabletext/to-html";
 export default async function Contact() {
     const { text, imageUrl } = await getFocusData();
     const textHtml = toHTML(text);
-    console.log(text);
     return (
         <>
             <div

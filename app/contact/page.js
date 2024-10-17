@@ -1,4 +1,4 @@
-import { getContactData } from "../utils/sanityClient";
+import { getContactData } from "../utils/cms-service";
 import CenteredFadeInDiv from "../components/CenteredFadeInDiv";
 
 export default async function Contact() {

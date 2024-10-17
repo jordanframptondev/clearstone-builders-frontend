@@ -1,5 +1,5 @@
 import CenteredFadeInDiv from "../components/CenteredFadeInDiv";
-import { getFocusData } from "../utils/sanityClient";
+import { getFocusData } from "../utils/cms-service";
 import { toHTML } from "@portabletext/to-html";
 
 export default async function Contact() {

@@ -34,6 +34,15 @@ export async function getContactData() {
     };
 }
 
+export async function getFocusData() {
+    let data = await client.fetch('*[_type == "focus"]');
+    data = data[0];
+    return {
+        text: data.text,
+        imageUrl: urlFor(data.image).url(),
+    };
+}
+
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getPosts() {
     const posts = await client.fetch('*[_type == "post"]');

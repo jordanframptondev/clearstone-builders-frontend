@@ -20,6 +20,9 @@ module.exports = {
             animation: {
                 "fade-in": "fadeIn 2s ease-in-out",
             },
+            maxWidth: {
+                "3/4": "75%",
+            },
         },
     },
     plugins: ["prettier-plugin-tailwindcss"],

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iarna/rtf-to-html": "^1.1.0",
+    "@portabletext/to-html": "^2.0.13",
     "@sanity/client": "^6.22.1",
     "@sanity/image-url": "^1.0.2",
     "next": "14.2.15",

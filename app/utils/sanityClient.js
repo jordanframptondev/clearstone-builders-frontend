@@ -28,7 +28,7 @@ export async function getContactData() {
     data = data[0];
     return {
         email: data.email,
-        phone: data.phone,
+        phone: data.phoneNumber,
         address: data.address,
         imageUrl: urlFor(data.image).url(),
     };

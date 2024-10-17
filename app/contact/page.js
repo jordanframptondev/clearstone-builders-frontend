@@ -3,7 +3,6 @@ import CenteredFadeInDiv from "../components/CenteredFadeInDiv";
 
 export default async function Contact() {
     const { email, phone, address, imageUrl } = await getContactData();
-    console.log("Phone", phone);
     return (
         <>
             <div

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import AnimatedHamburger from "./AnimatedHamburger";
 
 const centered = {
     position: "absolute",
@@ -14,23 +15,23 @@ const centered = {
 };
 
 const menuItems = [
-    { id: "fd9j", label: "Home", path: "/" },
-    { id: "lsf0", label: "Focus", path: "/focus" },
-    { id: "aa8f", label: "Portfolio", path: "/portfolio" },
-    { id: "bddn", label: "Contact", path: "/contact" },
+    { label: "Home", path: "/" },
+    { label: "Focus", path: "/focus" },
+    { label: "Portfolio", path: "/portfolio" },
+    { label: "Contact", path: "/contact" },
 ];
 
 export function Header() {
     const [open, setOpen] = useState(false);
     const router = useRouter();
     const divRef = useRef(null);
+    const iconRef = useRef(null);
 
     const handleClickOutside = (event) => {
-        event.preventDefault();
-        if (event.target.tagName === "A") {
-            router.push(event.target.pathname);
+        console.log(event.target);
+        if (iconRef.current && !iconRef.current.contains(event.target)) {
+            setOpen(false);
         }
-        setOpen(false);
     };
 
     useEffect(() => {
@@ -43,21 +44,36 @@ export function Header() {
         };
     }, []);
 
+    const toggleMenu = () => {
+        setOpen(!open);
+    };
+
     return (
         <div>
-            <button className="absolute z-50 text-6xl text-gray-800 left-1/2 -translate-x-1/2 sm:left-[100px] top-[50px]" onClick={() => setOpen(!open)}>CB</button>
             <div
-                style={{ opacity: open ? "1" : "0", zIndex: open ? 999 : -1 }}
-                className="bg-[#56524d] fixed top-0 left-0 w-screen h-screen duration-500 ease-in-out"
+                id="icon"
+                ref={iconRef}
+                onClick={toggleMenu}
+                className={`absolute left-1/2 -translate-x-full sm:left-[100px] top-[50px] flex flex-col items-center z-10`}
+            >
+                <button className="text-6xl text-gray-800 sm:left-[100px] top-[50px] pb-1">
+                    CB
+                </button>
+                <AnimatedHamburger open={open} />
+            </div>
+            <div
+                style={{ opacity: open ? "1" : "0", zIndex: open ? 9 : -1 }}
+                className="bg-[#56524d] fixed top-0 left-0 w-screen h-screen duration-700 ease-in-out"
                 ref={divRef}
             >
                 <div style={centered}>
                     <div className="flex flex-col text-center">
-                        {menuItems.map((item) => (
+                        {menuItems.map((item, i) => (
                             <Link
-                                key={item.id}
+                                key={i}
                                 href={item.path}
                                 className="my-2 text-white text-2xl uppercase"
+                                onClick={() => setOpen(false)}
                             >
                                 {item.label}
                             </Link>

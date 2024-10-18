@@ -7,7 +7,7 @@ import imageUrlBuilder from "@sanity/image-url";
 export const client = createClient({
     projectId: "geus6dp5",
     dataset: "production",
-    useCdn: true, // set to `false` to bypass the edge cache
+    useCdn: false, // set to `false` to bypass the edge cache
     apiVersion: "2023-05-03", // use current date (YYYY-MM-DD) to target the latest API version
     // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
 });
@@ -17,9 +17,21 @@ export function urlFor(source) {
     return builder.image(source);
 }
 
+export async function getHomeImages() {
+    const data = await client.fetch('*[_type == "home"]{static}');
+
+    console.log("home static", data);
+
+    const images = data[0]?.images?.map((image) => urlFor(image).url());
+    return images;
+}
+
 export async function getPortfolioImages() {
-    const data = await client.fetch('*[_type == "portfolioPage"]{images}');
-    const images = data[0]?.images.map((image) => urlFor(image).url());
+    const data = await client.fetch('*[_type == "portfolio"]{static}');
+
+    console.log("portfolio static", data);
+
+    const images = data[0]?.images?.map((image) => urlFor(image).url());
     return images;
 }
 

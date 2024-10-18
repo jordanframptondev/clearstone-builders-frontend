@@ -12,7 +12,7 @@ export default async function Contact() {
                 style={{ backgroundImage: `url(${imageUrl})` }}
             ></div>
             <CenteredFadeInDiv>
-                <div className="text-center">
+                <div className="text-center text-white">
                     <div dangerouslySetInnerHTML={{ __html: textHtml }} />
                 </div>
             </CenteredFadeInDiv>

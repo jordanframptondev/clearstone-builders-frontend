@@ -13,7 +13,7 @@ export function ClientGallery({ images }) {
   return (
     <ImageGallery
       imagesInfoArray={imagesArray}
-      columnCount={"auto"}
+      columnCount={3}
       columnWidth={600}
       gapSize={30}
     />

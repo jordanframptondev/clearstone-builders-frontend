@@ -8,7 +8,7 @@
 
 .hamburger-icon .line {
     /* background-color: #000; */ /* Set with tailwind in component to match */
-    height: 1.5px;
+    height: 1px;
     width: 100%;
     display: block;
     position: absolute;

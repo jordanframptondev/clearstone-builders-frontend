@@ -1,5 +1,5 @@
-import { getContactData } from "../utils/cms-service";
-import CenteredFadeInDiv from "../components/CenteredFadeInDiv";
+import { getContactData } from "@/utils/cms-service";
+import CenteredFadeInDiv from "@/components/CenteredFadeInDiv";
 
 export default async function Contact() {
     const { email, phone, address, imageUrl } = await getContactData();

@@ -8,7 +8,7 @@ export default async function Contact() {
     return (
         <>
             <div
-                className="absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10"
+                className="fixed lg:absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10"
                 style={{ backgroundImage: `url(${imageUrl})` }}
             ></div>
             <CenteredFadeInDiv>

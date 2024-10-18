@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import AnimatedHamburger from "./AnimatedHamburger";
 
 const centered = {
     position: "absolute",
@@ -45,9 +46,19 @@ export function Header() {
 
     return (
         <div>
-            <button className="absolute z-50 text-6xl text-gray-800 left-1/2 -translate-x-1/2 sm:left-[100px] top-[50px]" onClick={() => setOpen(!open)}>CB</button>
             <div
-                style={{ opacity: open ? "1" : "0", zIndex: open ? 999 : -1 }}
+                className={`absolute left-1/2 -translate-x-full sm:left-[100px] top-[50px] flex flex-col items-center ${open ? "z-10" : "z-999"}`}
+            >
+                <button
+                    className="text-6xl text-gray-800 sm:left-[100px] top-[50px] pb-1"
+                    onClick={() => setOpen(!open)}
+                >
+                    CB
+                </button>
+                <AnimatedHamburger open={open} onClick={() => setOpen(!open)} />
+            </div>
+            <div
+                style={{ opacity: open ? "1" : "0", zIndex: open ? 9 : -1 }}
                 className="bg-[#56524d] fixed top-0 left-0 w-screen h-screen duration-500 ease-in-out"
                 ref={divRef}
             >

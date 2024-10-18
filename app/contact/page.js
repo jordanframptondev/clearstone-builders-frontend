@@ -1,5 +1,6 @@
 import { getContactData } from "@/utils/cms-service";
 import CenteredFadeInDiv from "@/components/CenteredFadeInDiv";
+import Image from "next/image";
 
 export default async function Contact() {
     const { email, phone, address, imageUrl } = await getContactData();
@@ -11,11 +12,14 @@ export default async function Contact() {
             ></div>
             <CenteredFadeInDiv>
                 <div className="text-center text-white">
-                    <p className="text-2xl font-extrabold">
-                        Clearstone Builders
-                    </p>
+                    <Image
+                        src="/Clearstone_Builders_Primary.png"
+                        alt="CB Logo"
+                        width={200}
+                        height={100}
+                        className={"w-[200px]"}
+                    />
                     <br />
-                    <p>{address}</p>
                     <p>{email}</p>
                     <p>{phone}</p>
                 </div>

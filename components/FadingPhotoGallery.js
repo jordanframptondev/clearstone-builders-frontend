@@ -1,6 +1,6 @@
 "use client";
 
-import "@/app/styles/fading-photo-gallery.css";
+import "@/styles/fading-photo-gallery.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

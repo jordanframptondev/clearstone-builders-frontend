@@ -1,5 +1,5 @@
-import { getHomeImages } from "@/app/utils/cms-service";
-import {FadingPhotoGallery} from "@/app/components/FadingPhotoGallery";
+import { getHomeImages } from "@/utils/cms-service";
+import {FadingPhotoGallery} from "@/components/FadingPhotoGallery";
 
 export default function Home() {
 

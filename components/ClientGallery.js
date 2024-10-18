@@ -13,9 +13,9 @@ export function ClientGallery({ images }) {
   return (
     <ImageGallery
       imagesInfoArray={imagesArray}
-      columnCount={3}
-      columnWidth={600}
-      gapSize={30}
+      columnCount={"3"}
+      columnWidth={300}
+      gapSize={22}
     />
   );
 }

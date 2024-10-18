@@ -50,12 +50,12 @@ export function Header() {
     };
 
     return (
-        <div>
+        <>
             <div
                 id="icon"
                 ref={iconRef}
                 onClick={toggleMenu}
-                className={`absolute min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[155px] top-[50px] flex flex-col items-center z-10 cursor-pointer transition-all duration-500 ease-in-out`}
+                className={`absolute text-center min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[155px] top-[50px] z-10 cursor-pointer transition-all duration-500 ease-in-out`}
             >
                 <Image
                     src="/Clearstone_Builders_Primary.png"
@@ -86,6 +86,6 @@ export function Header() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }

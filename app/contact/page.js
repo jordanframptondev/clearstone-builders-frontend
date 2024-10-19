@@ -10,7 +10,7 @@ export default async function Contact() {
                 className="absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10"
                 style={{ backgroundImage: `url(${imageUrl})` }}
             ></div>
-            <CenteredFadeInDiv>
+            <CenteredFadeInDiv marginCentered={false}>
                 <div className="flex flex-col items-center text-center text-white">
                     <Image
                         src="/Clearstone_Builders_Primary.png"

@@ -29,7 +29,6 @@ export function Header() {
     const iconRef = useRef(null);
 
     const handleClickOutside = (event) => {
-        console.log(event.target);
         if (iconRef.current && !iconRef.current.contains(event.target)) {
             setOpen(false);
         }

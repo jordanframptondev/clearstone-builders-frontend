@@ -1,6 +1,7 @@
 import CenteredFadeInDiv from "@/components/CenteredFadeInDiv";
 import { getFocusData } from "@/utils/cms-service";
 import { toHTML } from "@portabletext/to-html";
+import "../../styles/focus.css";
 
 export default async function Contact() {
     const { text, imageUrl } = await getFocusData();
@@ -12,8 +13,11 @@ export default async function Contact() {
                 style={{ backgroundImage: `url(${imageUrl})` }}
             ></div>
             <CenteredFadeInDiv>
-                <div className="text-center text-white">
-                    <div dangerouslySetInnerHTML={{ __html: textHtml }} />
+                <div className="text-left text-white">
+                    <div
+                        className="text-sm md:text-base p-2 custom-paragraph-spacing"
+                        dangerouslySetInnerHTML={{ __html: textHtml }}
+                    />
                 </div>
             </CenteredFadeInDiv>
         </>

@@ -11,7 +11,7 @@ export default async function Contact() {
                 style={{ backgroundImage: `url(${imageUrl})` }}
             ></div>
             <CenteredFadeInDiv>
-                <div className="text-center text-white">
+                <div className="flex flex-col items-center text-center text-white">
                     <Image
                         src="/Clearstone_Builders_Primary.png"
                         alt="CB Logo"

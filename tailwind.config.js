@@ -23,6 +23,12 @@ module.exports = {
             maxWidth: {
                 "3/4": "75%",
             },
+            maxHeight: {
+                "45vh": "45vh",
+                "1/2": "50%",
+                "3/4": "75%",
+                "3/4vh": "75vh",
+            },
         },
     },
     plugins: ["prettier-plugin-tailwindcss"],

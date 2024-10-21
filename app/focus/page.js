@@ -12,8 +12,8 @@ export default async function Contact() {
                 className="fixed lg:absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10"
                 style={{ backgroundImage: `url(${imageUrl})` }}
             ></div>
-            <CenteredFadeInDiv>
-                <div className="text-left text-white">
+            <CenteredFadeInDiv marginCentered={false}>
+                <div className="text-left text-white max-h-45vh overflow-auto">
                     <div
                         className="text-sm md:text-base p-2 custom-paragraph-spacing"
                         dangerouslySetInnerHTML={{ __html: textHtml }}

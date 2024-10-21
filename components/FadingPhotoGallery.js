@@ -30,7 +30,7 @@ export function FadingPhotoGallery({ imageURLs }) {
             height={900}
             alt={`Image ${index}`}
             className="full-screen-image"
-            priority={true}
+            priority={index === 0}
           />
         </div>
       ))}

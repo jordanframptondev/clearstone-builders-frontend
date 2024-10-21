@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import {useRouter} from "next/navigation";
+import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
 import AnimatedHamburger from "./AnimatedHamburger";
 
@@ -16,10 +16,10 @@ const centered = {
 };
 
 const menuItems = [
-    { label: "Home", path: "/" },
-    { label: "Focus", path: "/focus" },
-    { label: "Portfolio", path: "/portfolio" },
-    { label: "Contact", path: "/contact" },
+    {label: "Home", path: "/"},
+    {label: "Focus", path: "/focus"},
+    {label: "Portfolio", path: "/portfolio"},
+    {label: "Contact", path: "/contact"},
 ];
 
 export function Header() {
@@ -50,23 +50,25 @@ export function Header() {
 
     return (
         <>
-            <div
-                id="icon"
-                ref={iconRef}
-                onClick={toggleMenu}
-                className={`absolute text-center min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[155px] top-[50px] z-10 cursor-pointer transition-all duration-500 ease-in-out`}
-            >
-                <Image
-                    src="/Clearstone_Builders_Primary.png"
-                    alt="CB Logo"
-                    width={200}
-                    height={100}
-                    className={"w-[200px]"}
-                />
-                <AnimatedHamburger open={open} />
+            <div className={`sticky top-0 z-50 w-full`}>
+                <div
+                    id="icon"
+                    ref={iconRef}
+                    onClick={toggleMenu}
+                    className={`absolute text-center min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[155px] top-[50px] z-10 cursor-pointer transition-all duration-500 ease-in-out`}
+                >
+                    <Image
+                        src="/Clearstone_Builders_Primary.png"
+                        alt="CB Logo"
+                        width={200}
+                        height={100}
+                        className={"w-[200px]"}
+                    />
+                    <AnimatedHamburger open={open}/>
+                </div>
             </div>
             <div
-                style={{ opacity: open ? "1" : "0", zIndex: open ? 9 : -1 }}
+                style={{opacity: open ? "1" : "0", zIndex: open ? 9 : -1}}
                 className="bg-[#4a504df0] fixed top-0 left-0 w-screen h-screen duration-1000 ease-in-out"
                 ref={divRef}
             >

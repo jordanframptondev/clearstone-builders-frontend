@@ -6,6 +6,9 @@ module.exports = {
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
+        fontFamily: {
+            montserrat: "var(--font-montserrat)"
+        },
         extend: {
             colors: {
                 background: "var(--background)",

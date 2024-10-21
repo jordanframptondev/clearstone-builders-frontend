@@ -19,14 +19,12 @@ export function urlFor(source) {
 
 export async function getHomeImages() {
     const data = await client.fetch('*[_type == "home"]{images}');
-
     const images = data[0]?.images?.map((image) => urlFor(image).url());
     return images;
 }
 
 export async function getPortfolioImages() {
     const data = await client.fetch('*[_type == "portfolio"]{images}');
-    
     const images = data[0]?.images?.map((image) => urlFor(image).url());
     return images;
 }

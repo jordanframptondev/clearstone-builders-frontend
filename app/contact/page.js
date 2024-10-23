@@ -6,12 +6,17 @@ export default async function Contact() {
     const {email, phone, address, imageUrl} = await getContactData();
     return (
         <>
-            <div
-                className="absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10"
-                style={{backgroundImage: `url(${imageUrl})`}}
-            ></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10">
+                <Image
+                    src={imageUrl}
+                    alt="Background Image"
+                    layout="fill"
+                    objectFit="cover"
+                    priority={true}
+                />
+            </div>
             <CenteredFadeInDiv marginCentered={false}>
-                <div className="flex flex-col items-center text-center text-white">
+                <div className="flex flex-col items-center text-center text-white font-light">
                     <Image
                         src="/Clearstone_Builders_Primary.png"
                         alt="CB Logo"

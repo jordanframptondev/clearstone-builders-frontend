@@ -63,6 +63,7 @@ export function Header() {
                         width={200}
                         height={100}
                         className={"w-[200px]"}
+                        priority={true}
                     />
                     <AnimatedHamburger open={open}/>
                 </div>

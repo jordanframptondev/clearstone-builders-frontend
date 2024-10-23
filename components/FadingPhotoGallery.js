@@ -1,39 +1,90 @@
 "use client";
-
+import "@/styles/page-loader.css";
 import "@/styles/fading-photo-gallery.css";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 
-export function FadingPhotoGallery({ imageURLs }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export function FadingPhotoGallery({imageURLs}) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [loadTimes, setLoadTimes] = useState({});
+    const [loadedCount, setLoadedCount] = useState(0);
+    const [firstImageLoaded, setFirstImageLoaded] = useState(false);
+    const numberOfImages = imageURLs.length;
 
-  useEffect(() => {
-    if (imageURLs?.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % imageURLs.length);
-      }, 3500);
+    useEffect(() => {
+        if (loadedCount === numberOfImages && numberOfImages > 0) {
+            const interval = setInterval(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % imageURLs.length);
+            }, 3500);
 
-      return () => clearInterval(interval);
+            return () => clearInterval(interval);
+        }
+    }, [loadedCount, imageURLs.length]);
+
+    function handleImageLoad(index, startTime) {
+        const loadTime = Date.now() - startTime;
+        console.log(`Image ${index} loaded in ${loadTime} ms`);
+        if (index === 0) {
+            setFirstImageLoaded(true);
+        }
+        setLoadTimes((prevLoadTimes) => ({
+            ...prevLoadTimes,
+            [index]: loadTime,
+        }));
+        setLoadedCount((prevCount) => prevCount + 1);
     }
-  }, [imageURLs?.length]);
 
-  return (
-    <div className="image-container">
-      {imageURLs.map((image, index) => (
-        <div
-          key={index}
-          className={`image-slide ${index === currentIndex ? "active" : ""}`}
-        >
-          <Image
-            src={image}
-            width={1600}
-            height={900}
-            alt={`Image ${index}`}
-            className="full-screen-image"
-            priority={index === 0}
-          />
-        </div>
-      ))}
-    </div>
-  );
+    const startTime = Date.now();
+
+    return (
+        <>
+            {/*{!(firstImageLoaded) &&*/}
+            {/*    <div className="absolute inset-0 m-auto text-[#262a1cbd]">*/}
+            {/*        <div className="loader absolute inset-0 m-auto"></div>*/}
+            {/*        <div className="text-center top-[100px] font-light absolute inset-0 m-auto w-40 h-20">*/}
+            {/*            Loading Visuals*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*}*/}
+            <div className={`image-container`}>
+                {
+                    <div
+                        key={0}
+                        className={`image-slide ${0 === currentIndex ? "active" : ""}`}
+                    >
+                        <Image
+                            src={imageURLs[0]}
+                            width={900}
+                            height={400}
+                            alt={`Image ${0}`}
+                            className="full-screen-image"
+                            priority={true}
+                            quality={50}
+                            onLoad={() => handleImageLoad(0, startTime)}
+                        />
+                    </div>
+                }
+                {imageURLs.map((image, index) => {
+                    if (index !== 0) {
+                        return (
+                            <div
+                                key={index}
+                                className={`image-slide ${index === currentIndex ? "active" : ""}`}
+                            >
+                                <Image
+                                    src={image}
+                                    width={900}
+                                    height={400}
+                                    alt={`Image ${index}`}
+                                    className="full-screen-image"
+                                    priority={true}
+                                    onLoad={() => handleImageLoad(index, startTime)}
+                                />
+                            </div>
+                        );
+                    }
+                })}
+            </div>
+        </>
+    );
 }

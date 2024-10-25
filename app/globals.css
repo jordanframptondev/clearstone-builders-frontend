@@ -19,3 +19,29 @@ figure img {
 figure img:hover {
     transform: scale(1.05);
 }
+
+@keyframes fadeInBackground {
+    from {
+        opacity: .10;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in-background {
+    animation: fadeInBackground 1.5s ease-in-out;
+}
+
+.fade-in-div {
+    animation: fadeInDiv 3s ease-in-out;
+}
+
+@keyframes fadeInDiv {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

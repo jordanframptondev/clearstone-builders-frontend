@@ -13,6 +13,7 @@ export default async function Contact() {
                     layout="fill"
                     objectFit="cover"
                     priority={true}
+                    className={"fade-in-background"}
                 />
             </div>
             <CenteredFadeInDiv marginCentered={false}>

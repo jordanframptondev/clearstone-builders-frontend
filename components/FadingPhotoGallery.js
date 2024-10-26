@@ -54,12 +54,11 @@ export function FadingPhotoGallery({imageURLs}) {
                     >
                         <Image
                             src={imageURLs[0]}
-                            width={900}
-                            height={400}
+                            width={1920}
+                            height={1080}
                             alt={`Image ${0}`}
                             className="full-screen-image"
                             priority={true}
-                            quality={50}
                             onLoad={() => handleImageLoad(0, startTime)}
                         />
                     </div>
@@ -73,8 +72,8 @@ export function FadingPhotoGallery({imageURLs}) {
                             >
                                 <Image
                                     src={image}
-                                    width={900}
-                                    height={400}
+                                    width={1920}
+                                    height={1080}
                                     alt={`Image ${index}`}
                                     className="full-screen-image"
                                     priority={true}

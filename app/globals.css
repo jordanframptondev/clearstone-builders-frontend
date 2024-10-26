@@ -22,7 +22,7 @@ figure img:hover {
 
 @keyframes fadeInBackground {
     from {
-        opacity: .10;
+        opacity: .25;
     }
     to {
         opacity: 1;

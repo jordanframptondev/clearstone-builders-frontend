@@ -1,4 +1,3 @@
-import CenteredFadeInDiv from "@/components/CenteredFadeInDiv";
 import {getFocusData} from "@/utils/cms-service";
 import {toHTML} from "@portabletext/to-html";
 import "../../styles/focus.css";
@@ -9,24 +8,29 @@ export default async function Contact() {
     const textHtml = toHTML(text);
     return (
         <>
-            <div className="fixed lg:absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10">
+            <div className="image-container">
                 <Image
                     src={imageUrl}
                     alt="Background Image"
-                    layout="fill"
-                    objectFit="cover"
+                    width={1920}
+                    height={1080}
                     priority={true}
-                    className={"fade-in-background"}
+                    className={"fade-in-background full-screen-image"}
                 />
             </div>
-            <CenteredFadeInDiv marginCentered={false}>
-                <div className="text-left text-white font-light max-h-45vh overflow-auto">
+
+            <div
+                className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000 ease-in
+                max-w-[1260px] w-full lg:min-w-[1000px]">
+                <div className="bg-[#262a1cbd] transition-all duration-1000 ease-in
+                fade-in-div bg-opacity-80 px-9 py-11 rounded-sm text-left text-white font-light overflow-auto
+                max-h-[400px] sm:max-h-[455px] mx-[5%]">
                     <div
-                        className="text-sm md:text-base p-2 custom-paragraph-spacing"
+                        className="text-sm sm:text-base md:text-lg lg:text-lg custom-paragraph-spacing"
                         dangerouslySetInnerHTML={{__html: textHtml}}
                     />
                 </div>
-            </CenteredFadeInDiv>
+            </div>
         </>
     );
 }

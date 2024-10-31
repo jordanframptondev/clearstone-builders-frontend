@@ -22,7 +22,7 @@ figure img:hover {
 
 @keyframes fadeInBackground {
     from {
-        opacity: .25;
+        opacity: .33;
     }
     to {
         opacity: 1;
@@ -34,7 +34,7 @@ figure img:hover {
 }
 
 .fade-in-div {
-    animation: fadeInDiv 3s ease-in-out;
+    animation: fadeInDiv 2s ease-in-out;
 }
 
 @keyframes fadeInDiv {

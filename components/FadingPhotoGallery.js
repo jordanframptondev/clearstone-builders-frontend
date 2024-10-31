@@ -38,14 +38,14 @@ export function FadingPhotoGallery({imageURLs}) {
 
     return (
         <>
-            {/*{!(firstImageLoaded) &&*/}
-            {/*    <div className="absolute inset-0 m-auto text-[#262a1cbd]">*/}
-            {/*        <div className="loader absolute inset-0 m-auto"></div>*/}
-            {/*        <div className="text-center top-[100px] font-light absolute inset-0 m-auto w-40 h-20">*/}
-            {/*            Loading Visuals*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*}*/}
+            {!(firstImageLoaded) &&
+                <div className="absolute inset-0 m-auto text-[#262a1cbd]">
+                    <div className="loader absolute inset-0 m-auto"></div>
+                    <div className="text-center top-[100px] font-light absolute inset-0 m-auto w-40 h-20">
+                        Loading Visuals
+                    </div>
+                </div>
+            }
             <div className={`image-container`}>
                 {
                     <div

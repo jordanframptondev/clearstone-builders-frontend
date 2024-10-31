@@ -55,14 +55,14 @@ export function Header() {
                     id="icon"
                     ref={iconRef}
                     onClick={toggleMenu}
-                    className={`absolute text-center min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[155px] top-[50px] z-10 cursor-pointer transition-all duration-500 ease-in-out`}
+                    className={`absolute flex flex-col items-center text-center min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[135px] top-[40px] z-10 cursor-pointer transition-all duration-1000 ease-in-out`}
                 >
                     <Image
                         src="/Clearstone_Builders_Primary.png"
                         alt="CB Logo"
                         width={200}
                         height={100}
-                        className={"w-[200px]"}
+                        className={"w-[150px] sm:w-[200px]"}
                         priority={true}
                     />
                     <AnimatedHamburger open={open}/>

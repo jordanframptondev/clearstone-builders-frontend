@@ -7,7 +7,9 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            montserrat: "var(--font-montserrat)"
+            montserrat: "var(--font-montserrat)",
+            robotoCondensed: "var(--font-roboto-condensed)",
+            novecento: "var(--font-novecento)"
         },
         extend: {
             colors: {
@@ -16,8 +18,8 @@ module.exports = {
             },
             keyframes: {
                 fadeIn: {
-                    "0%": { opacity: 0 },
-                    "100%": { opacity: 1 },
+                    "0%": {opacity: 0},
+                    "100%": {opacity: 1},
                 },
             },
             animation: {

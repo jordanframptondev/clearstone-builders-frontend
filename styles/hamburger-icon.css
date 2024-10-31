@@ -6,6 +6,12 @@
     display: inline-block;
 }
 
+@media (max-width: 640px) {
+    .hamburger-icon {
+        width: 30px;
+    }
+}
+
 .hamburger-icon .line {
     /* background-color: #000; */ /* Set with tailwind in component to match */
     height: 1px;

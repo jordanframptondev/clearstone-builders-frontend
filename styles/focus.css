@@ -1,3 +1,16 @@
+.image-container {
+    position: relative;
+    height: 100dvh;
+    width: 100dvw;
+    overflow: hidden;
+}
+
+.full-screen-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .custom-paragraph-spacing p {
     margin-bottom: 1rem; /* Adjust the value as needed */
 }

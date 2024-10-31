@@ -29,6 +29,19 @@ export async function getPortfolioImages() {
     return images;
 }
 
+export async function getDetailedPortfolioImages() {
+    const data = await client.fetch('*[_type == "portfolio"].images[].asset->{url, originalFilename, metadata{lqip, dimensions{width,aspectRatio, height}}}');
+    return data?.map((image) => ({
+      src: image?.url,
+      alt: "Clearstone Builders portfolio image",
+      aspect_ratio: image?.metadata?.dimensions?.aspectRatio,
+      width: image?.metadata?.dimensions?.width,
+      height: image?.metadata?.dimensions?.height,
+      lqip: image?.metadata?.lqip,
+      name: image?.originalFilename
+    }));
+  }
+
 export async function getContactData() {
     let data = await client.fetch('*[_type == "contact"]');
     data = data[0];

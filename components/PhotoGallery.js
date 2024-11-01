@@ -1,25 +1,38 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useWindowSize } from '../app/hooks/useWindowSize';
 
 export function PhotoGallery({ photos }) {
   const [selectedImage, setSelectedImage] = useState(null);
+  const { width } = useWindowSize();
+  const defaultWidth = width ? (width > 600 ? 3 : 1) : 3
+  const [columns, setColumns] = useState(defaultWidth);
+  console.log("WIDTH", width, "COLUMNS", columns);
+
+  useEffect(() => {
+    setColumns(width > 600 ? 3 : 1);
+  }, [width])
 
   const openLightbox = (image) => setSelectedImage(image);
   const closeLightbox = () => setSelectedImage(null);
 
-  function orderObjects(photos) {
-    const col1 = photos.filter((p, index) => index % 3 === 0);
-    const col2 = photos.filter((p, index) => (index - 1) % 3 === 0);
-    const col3 = photos.filter((p, index) => (index - 2) % 3 === 0);
-    return [...col1, ...col2, ...col3];
+  
+  let photosInOrder = [];
+  if (columns > 1) {
+    const colPhotos = Array.from({ length: columns }, () => []);
+    photos.forEach((photo, index) => {
+      colPhotos[index % columns].push(photo);
+    });
+    photosInOrder = colPhotos.flat();
+  } else {
+    photosInOrder = photos;
   }
 
-  const photosInOrder = orderObjects(photos);
   return (
-    <div>
-      <div className="columns-3 gap-4">
+    <>
+      { columns ? <div className={`columns-${columns} gap-4`}>
         {photosInOrder.map((photo, index) => (
           <div key={index} className="imageWrapper">
             <Image
@@ -32,7 +45,7 @@ export function PhotoGallery({ photos }) {
             />
           </div>
         ))}
-      </div>
+      </div> : null }
 
       {selectedImage && (
         <div className="lightbox" onClick={closeLightbox}>
@@ -45,6 +58,6 @@ export function PhotoGallery({ photos }) {
           />
         </div>
       )}
-    </div>
+    </>
   );
 }

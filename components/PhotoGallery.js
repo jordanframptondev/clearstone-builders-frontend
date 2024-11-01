@@ -32,7 +32,7 @@ export function PhotoGallery({ photos }) {
 
   return (
     <>
-      { columns ? <div className={`columns-${columns} gap-4`}>
+      { columns ? <div className={`${columns ? 'columns-' + columns : 'columns-3'} gap-4`}>
         {photosInOrder.map((photo, index) => (
           <div key={index} className="imageWrapper">
             <Image

@@ -1,4 +1,3 @@
-"use server";
 import { PhotoGallery } from '@/components/PhotoGallery';
 import { getDetailedPortfolioImages } from '@/utils/cms-service';
 

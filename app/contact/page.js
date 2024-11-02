@@ -2,6 +2,13 @@ import {getContactData} from "@/utils/cms-service";
 import CenteredFadeInDiv from "@/components/CenteredFadeInDiv";
 import Image from "next/image";
 
+export const metadata = {
+    title: 'Clearstone Builders - Contact',
+    description: 'Contact info of Clearstone Builders',
+    keywords: 'Contact, Info, Phone, Email, website, clearstone builders, clearstone, builders, homes',
+    viewport: 'width=device-width, initial-scale=1',
+};
+
 export default async function Contact() {
     const {email, phone, address, imageUrl} = await getContactData();
     return (

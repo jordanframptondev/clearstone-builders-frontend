@@ -3,6 +3,13 @@ import {toHTML} from "@portabletext/to-html";
 import "../../styles/focus.css";
 import Image from "next/image";
 
+export const metadata = {
+    title: 'Clearstone Builders - Focus',
+    description: 'Core principles of Clearstone Builders',
+    keywords: 'Focus, Principles, vision, website, clearstone builders, clearstone, builders, homes',
+    viewport: 'width=device-width, initial-scale=1',
+};
+
 export default async function Contact() {
     const {text, imageUrl} = await getFocusData();
     const textHtml = toHTML(text);

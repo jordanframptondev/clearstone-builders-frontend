@@ -34,14 +34,14 @@ export function PhotoGallery({ photos }) {
     <>
       { columns ? <div className={`${columns ? 'columns-' + columns : 'columns-3'} gap-4`}>
         {photosInOrder.map((photo, index) => (
-          <div key={index} className="imageWrapper">
+          <div key={index} className="relative cursor-pointer overflow-hidden mb-4">
             <Image
               src={photo.src}
               alt={photo.alt || `Photo ${index + 1}`}
               width={photo.width}
               height={photo.height}
               onClick={() => openLightbox(photo)}
-              className="transition-all ease-in-out duration-500 w-full h-auto block hover:scale-105 mb-4"
+              className="transition-all ease-in-out duration-500 w-full h-auto block hover:scale-110"
             />
           </div>
         ))}

@@ -46,12 +46,6 @@ figure img:hover {
   }
 }
 
-.imageWrapper {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-
 .lightbox {
   position: fixed;
   top: 0;

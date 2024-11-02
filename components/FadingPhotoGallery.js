@@ -19,7 +19,7 @@ export function FadingPhotoGallery({imageURLs}) {
 
             return () => clearInterval(interval);
         }
-    }, [loadedCount, imageURLs.length]);
+    }, [loadedCount, imageURLs.length, numberOfImages]);
 
     function handleImageLoad(index, startTime) {
         const loadTime = Date.now() - startTime;

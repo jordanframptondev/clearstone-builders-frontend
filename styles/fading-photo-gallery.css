@@ -28,6 +28,6 @@
 
 @media (max-width: 800px) {
     .full-screen-image {
-        object-position: bottom;
+        object-position: center;
     }
 }

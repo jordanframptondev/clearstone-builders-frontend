@@ -27,11 +27,11 @@ export default async function Contact() {
             </div>
 
             <div
-                className="absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000 ease-in
-                max-w-[1260px] w-full lg:min-w-[1000px] max-h-[100dvh]">
+                className="flex items-center absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000 ease-in
+                max-w-[1260px] w-full lg:min-w-[1000px] overflow-auto max-h-[100dvh]">
                 <div className="bg-[#262a1cbd] transition-all duration-1000 ease-in
-                fade-in-div bg-opacity-80 px-9 py-10 rounded-sm text-left text-white font-light overflow-auto
-                max-h-[100dvh] mx-[5%]">
+                fade-in-div bg-opacity-80 px-9 py-10 rounded-sm text-left text-white font-light mx-[5%] overflow-auto
+                max-h-[100dvh] h-[400px]">
                     <div
                         className="text-sm sm:text-base md:text-lg lg:text-lg custom-paragraph-spacing"
                         dangerouslySetInnerHTML={{__html: textHtml}}

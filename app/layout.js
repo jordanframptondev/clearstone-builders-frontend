@@ -1,6 +1,6 @@
 import {Header} from "@/components/Header";
 import "./globals.css";
-import {Montserrat, Roboto_Condensed} from "next/font/google";
+import {Barlow_Condensed, Montserrat, Roboto_Condensed} from "next/font/google";
 import localFont from "next/font/local";
 
 const montserrat = Montserrat({
@@ -22,11 +22,18 @@ const novecento = localFont({
     variable: "--font-novecento",
 });
 
+const barlowCondensed = Barlow_Condensed({
+    subsets: ["latin"],
+    display: "swap",
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    variable: "--font-barlow-condensed",
+});
+
 export default function RootLayout({children}) {
     return (
         <html lang="en"
-              className={`${montserrat.variable} ${robotoCondensed.variable} ${novecento.variable}`}>
-        <body className={"font-robotoCondensed"}>
+              className={`${montserrat.variable} ${robotoCondensed.variable} ${novecento.variable} ${barlowCondensed.variable}`}>
+        <body className={"font-barlowCondensed"}>
         <Header/>
         {children}
         </body>

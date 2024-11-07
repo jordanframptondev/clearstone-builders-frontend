@@ -9,7 +9,8 @@ module.exports = {
         fontFamily: {
             montserrat: "var(--font-montserrat)",
             robotoCondensed: "var(--font-roboto-condensed)",
-            novecento: "var(--font-novecento)"
+            novecento: "var(--font-novecento)",
+            barlowCondensed: "var(--font-barlow-condensed)",
         },
         extend: {
             colors: {

@@ -33,7 +33,7 @@ export default async function Contact() {
                 fade-in-div bg-opacity-80 px-9 py-10 rounded-sm text-left text-white font-light mx-[5%] overflow-auto
                 max-h-[100dvh] h-[400px]">
                     <div
-                        className="text-sm sm:text-base md:text-lg lg:text-lg custom-paragraph-spacing"
+                        className="text-[16px] md:text-[18px] lg:text-[22px] custom-paragraph-spacing"
                         dangerouslySetInnerHTML={{__html: textHtml}}
                     />
                 </div>

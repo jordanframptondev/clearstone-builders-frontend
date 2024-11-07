@@ -11,6 +11,6 @@
     object-fit: cover;
 }
 
-.custom-paragraph-spacing p {
+.custom-paragraph-spacing p:not(:last-child) {
     margin-bottom: 1rem; /* Adjust the value as needed */
 }

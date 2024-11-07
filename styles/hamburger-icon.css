@@ -6,7 +6,7 @@
     display: inline-block;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .hamburger-icon {
         width: 30px;
     }

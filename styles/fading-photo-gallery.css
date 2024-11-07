@@ -30,4 +30,7 @@
     .full-screen-image {
         object-position: center;
     }
+    .image-top {
+        object-position: top;
+    }
 }

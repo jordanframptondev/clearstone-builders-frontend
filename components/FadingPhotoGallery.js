@@ -75,7 +75,7 @@ export function FadingPhotoGallery({imageURLs}) {
                                     width={1920}
                                     height={1080}
                                     alt={`Image ${index}`}
-                                    className="full-screen-image"
+                                    className={`full-screen-image ${index <= 1 ? "image-top" : ""}`}
                                     priority={true}
                                     onLoad={() => handleImageLoad(index, startTime)}
                                 />

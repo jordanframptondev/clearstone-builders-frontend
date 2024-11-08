@@ -25,7 +25,7 @@ export default async function Contact() {
             </div>
 
             <div
-                className={`flex items-center justify-center mx-4 lg:mx-0 w-[100dvw] h-[100dvh] md:my-[0] md:h-screen md:mx-9`}
+                className={`flex items-center justify-center w-[100dvw] h-[100dvh] md:my-[0] md:h-screen`}
             >
                 <div
                     className="bg-[#262a1c] bg-opacity-90 fade-in-div font-thin text-[#b6b4b1] text-xl lg:text-3xl  p-8 rounded-sm max-w-4xl">

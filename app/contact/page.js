@@ -34,6 +34,7 @@ export default async function Contact() {
                         className={"w-[200px]"}
                     />
                     <br />
+                    <br className="hidden lg:block" />
                     <a
                         href={`mailto:${email}`}
                         className="hover:underline transition-all uppercase mb-1"

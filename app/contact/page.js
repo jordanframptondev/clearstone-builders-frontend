@@ -24,14 +24,15 @@ export default async function Contact() {
                     className={"fade-in-background w-full h-full object-cover"}
                 />
             </div>
+
             <CenteredFadeInDiv marginCentered={false}>
-                <div className="flex flex-col items-center p-0 lg:p-24 lg:px-24 text-center font-light font-robotoCondensed">
+                <div className="flex flex-col items-center p-0 lg:p-16 lg:px-28 text-center font-light">
                     <Image
                         src="/Clearstone_Builders_Primary.png"
                         alt="CB Logo"
                         width={200}
                         height={100}
-                        className={"w-[200px]"}
+                        className={"w-[200px] lg:w-[250px]"}
                     />
                     <br />
                     <br className="hidden lg:block" />

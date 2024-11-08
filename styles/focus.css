@@ -21,3 +21,7 @@
         object-position: center;
     }
 }
+
+.max-height-constraint {
+    max-height: calc(100dvh - 350px);
+}

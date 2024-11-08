@@ -1,6 +1,6 @@
 "use client";
 
-import { ImageGallery } from "react-image-grid-gallery";
+import {ImageGallery} from "react-image-grid-gallery";
 
 export function ClientGallery({ images }) {
     const imagesArray = images?.map((image) => {

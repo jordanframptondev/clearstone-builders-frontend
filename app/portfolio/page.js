@@ -1,5 +1,5 @@
-import { PhotoGallery } from '@/components/PhotoGallery';
-import { getDetailedPortfolioImages } from '@/utils/cms-service';
+import {PhotoGallery} from '@/components/PhotoGallery';
+import {getDetailedPortfolioImages} from '@/utils/cms-service';
 
 export const metadata = {
     title: 'Clearstone Builders - Portfolio',

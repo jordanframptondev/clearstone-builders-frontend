@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { useWindowSize } from '../app/hooks/useWindowSize';
+import {useCallback, useEffect, useMemo, useState} from "react";
+import {useWindowSize} from '../app/hooks/useWindowSize';
 
 function getColumns(width) {
   if (width > 768) return 3;

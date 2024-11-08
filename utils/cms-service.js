@@ -1,5 +1,5 @@
 // sanity.js
-import { createClient } from "@sanity/client";
+import {createClient} from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 // Import using ESM URL imports in environments that supports it:
 // import {createClient} from 'https://esm.sh/@sanity/client'

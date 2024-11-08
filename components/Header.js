@@ -55,7 +55,7 @@ export function Header() {
                     id="icon"
                     ref={iconRef}
                     onClick={toggleMenu}
-                    className={`absolute flex flex-col items-center text-center min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[100px] top-[40px] z-10 cursor-pointer transition-all duration-1000 ease-in-out`}
+                    className={`absolute flex flex-col items-center text-center min-w-[200px] left-[50%] -translate-x-1/2 sm:left-[100px] lg:left-[140px] top-[40px] z-10 cursor-pointer transition-all duration-1000 ease-in-out`}
                 >
                     <Image
                         src="/Clearstone_Builders_Primary.png"

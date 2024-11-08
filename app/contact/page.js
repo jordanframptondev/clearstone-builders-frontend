@@ -3,24 +3,25 @@ import CenteredFadeInDiv from "@/components/CenteredFadeInDiv";
 import Image from "next/image";
 
 export const metadata = {
-    title: 'Clearstone Builders - Contact',
-    description: 'Contact info of Clearstone Builders',
-    keywords: 'Contact, Info, Phone, Email, website, clearstone builders, clearstone, builders, homes',
-    viewport: 'width=device-width, initial-scale=1',
+    title: "Clearstone Builders - Contact",
+    description: "Contact info of Clearstone Builders",
+    keywords:
+        "Contact, Info, Phone, Email, website, clearstone builders, clearstone, builders, homes",
+    viewport: "width=device-width, initial-scale=1",
 };
 
 export default async function Contact() {
     const { email, phone, address, imageUrl } = await getContactData();
     return (
-        <>
+        <div className="w-[100dvw] h-[100dvh] overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10">
                 <Image
                     src={imageUrl}
                     alt="Background Image"
-                    layout="fill"
-                    objectFit="cover"
+                    width={1920}
+                    height={1080}
                     priority={true}
-                    className={"fade-in-background"}
+                    className={"fade-in-background w-full h-full object-cover"}
                 />
             </div>
             <CenteredFadeInDiv marginCentered={false}>
@@ -47,6 +48,6 @@ export default async function Contact() {
                     </a>
                 </div>
             </CenteredFadeInDiv>
-        </>
+        </div>
     );
 }

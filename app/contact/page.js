@@ -25,7 +25,7 @@ export default async function Contact() {
                 />
             </div>
             <CenteredFadeInDiv marginCentered={false}>
-                <div className="flex flex-col items-center p-0 lg:p-8 lg:px-24 text-center font-light font-robotoCondensed">
+                <div className="flex flex-col items-center p-0 lg:p-24 lg:px-24 text-center font-light font-robotoCondensed">
                     <Image
                         src="/Clearstone_Builders_Primary.png"
                         alt="CB Logo"

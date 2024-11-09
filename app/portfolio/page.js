@@ -13,7 +13,7 @@ export default async function PortfolioPage() {
   return (
     <>
       <PhotoGallery photos={photos} />
-      <p className="text-center font-extralight text-[24px] md:text-[30px] xl:text-[36px] pt-3 pb-6">
+      <p className="text-center font-extralight text-[24px] md:text-[30px] xl:text-[36px] px-2 pt-3 pb-6">
         Many photographs on website by Joshua Caldwell Photographic and Lindsay
         Salazar Photography.
       </p>

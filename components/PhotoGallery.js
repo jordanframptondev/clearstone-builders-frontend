@@ -5,8 +5,8 @@ import {useCallback, useEffect, useMemo, useState} from "react";
 import {useWindowSize} from '../app/hooks/useWindowSize';
 
 function getColumns(width) {
-  if (width > 768) return 3;
-  if (width > 375) return 2;
+  if (width > 1280) return 3;
+  if (width > 768) return 2;
   return 1;
 }
 

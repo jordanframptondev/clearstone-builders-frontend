@@ -12,6 +12,11 @@
     object-position: center 25%;
 }
 
+.fade-in-div {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .custom-paragraph-spacing p:not(:last-child) {
     margin-bottom: 1rem; /* Adjust the value as needed */
 }
@@ -24,4 +29,15 @@
 
 .max-height-constraint {
     max-height: calc(100dvh - 350px);
+}
+
+@media (max-width: 1024px) and (min-aspect-ratio: 1/1) {
+    .max-height-constraint {
+        max-height: calc(100dvh - 100px);
+    }
+
+    .fade-in-div {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 }

@@ -27,9 +27,9 @@ export default async function Contact() {
             </div>
 
             <div
-                className="flex items-center absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-1000 ease-in
+                className="flex items-center absolute top-1/2 transform -translate-y-1/2 left-1/2 -translate-x-1/2 transition-all duration-500 ease-out
                 max-w-[1260px] w-full lg:min-w-[1000px]">
-                <div className="bg-[#262a1cbd] transition-all duration-1000 ease-in
+                <div className="bg-[#262a1cbd] transition-all duration-500 ease-out
                 fade-in-div bg-opacity-80 px-9 py-10 rounded-sm text-left text-white font-light overflow-auto">
                     <div
                         className="text-[18px] lg:text-[22px] custom-paragraph-spacing opacity-70 leading-[28px] max-height-constraint"

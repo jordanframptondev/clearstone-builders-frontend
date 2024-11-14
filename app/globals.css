@@ -6,20 +6,6 @@ body {
   background-color: #eae9e1;
 }
 
-figure {
-  overflow: hidden;
-  display: inline-block; /* Ensure the figure element maintains its size */
-}
-
-figure img {
-  border-radius: 1px !important;
-  transition: transform 0.8s ease-in-out;
-}
-
-figure img:hover {
-  transform: scale(1.05);
-}
-
 @keyframes fadeInBackground {
   from {
     opacity: 0.33;

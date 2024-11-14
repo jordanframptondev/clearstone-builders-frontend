@@ -22,7 +22,7 @@ export default async function Contact() {
                     width={1920}
                     height={1080}
                     priority={true}
-                    className={"fade-in-background full-screen-image"}
+                    className={"fade-in-background focus-page-full-screen-image"}
                 />
             </div>
 

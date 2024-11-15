@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import {useCallback, useEffect, useMemo, useState} from "react";
-import {useWindowSize} from '../app/hooks/useWindowSize';
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useWindowSize } from '../app/hooks/useWindowSize';
 
 function getColumns(width) {
   if (width > 1280) return 3;
@@ -67,15 +67,20 @@ export function PhotoGallery({ photos }) {
 
   return (
     <>
-      <div className={
-        columns === 1 ? 'columns-1 gap-4' :
-        columns === 2 ? 'columns-2 gap-4' :
-        'columns-3 gap-4'
-      }>
+      <div 
+        className={
+          columns === 1 ? 'columns-1 gap-4' :
+          columns === 2 ? 'columns-2 gap-4' :
+          'columns-3 gap-4'
+        }
+        style={{ 
+          columnFill: 'balance'  // This can help with column distribution
+        }}
+      >
         {photosInOrder.map((photo, index) => (
           <div 
             key={photo.id || index} 
-            className="relative cursor-pointer overflow-hidden mb-4"
+            className="break-inside-avoid mb-4 relative cursor-pointer overflow-hidden"
             role="button"
             tabIndex={0}
             aria-label={`Open ${photo.alt || `Photo ${index + 1}`} in lightbox`}

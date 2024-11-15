@@ -50,7 +50,7 @@ export function Header() {
 
     return (
         <>
-            <div className={`fixed top-0 z-50 w-full`}>
+            <div className={`sticky top-0 z-50 w-full`}>
                 <div
                     id="icon"
                     ref={iconRef}
@@ -70,7 +70,7 @@ export function Header() {
             </div>
             <div
                 style={{ opacity: open ? "1" : "0", zIndex: open ? 9 : -1 }}
-                className="bg-[#4a504df0] fixed top-0 left-0 w-[100dvw] h-[100dvh] duration-1000 ease-in-out"
+                className="bg-[#4a504df0] fixed top-0 left-0 w-[100dvw] h-[100dvh] transition-all duration-1000 ease-in-out"
                 ref={divRef}
             >
                 <div style={centered}>

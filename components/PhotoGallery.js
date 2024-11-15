@@ -47,15 +47,9 @@ export function PhotoGallery({ photos }) {
     }
   }, [selectedImage, handleKeyDown]);
 
-  const photosInOrder = useMemo(() => {
-    if (columns <= 1) return photos;
-    
-    const colPhotos = Array.from({ length: columns }, () => []);
-    photos.forEach((photo, index) => {
-      colPhotos[index % columns].push(photo);
-    });
-    return colPhotos.flat();
-  }, [photos, columns]);
+  const photosInColumns = Array.from({ length: columns }, (_, colIndex) => 
+    photos.filter((_, i) => i % columns === colIndex)
+  );
 
   if (!photos?.length) {
     return <div>No photos to display</div>;
@@ -67,35 +61,30 @@ export function PhotoGallery({ photos }) {
 
   return (
     <>
-      <div 
-        className={
-          columns === 1 ? 'columns-1 gap-4' :
-          columns === 2 ? 'columns-2 gap-4' :
-          'columns-3 gap-4'
-        }
-        style={{ 
-          columnFill: 'balance'  // This can help with column distribution
-        }}
-      >
-        {photosInOrder.map((photo, index) => (
-          <div 
-            key={photo.id || index} 
-            className="break-inside-avoid mb-4 relative cursor-pointer overflow-hidden"
-            role="button"
-            tabIndex={0}
-            aria-label={`Open ${photo.alt || `Photo ${index + 1}`} in lightbox`}
-            onClick={() => openLightbox(photo)}
-            onKeyDown={(e) => e.key === 'Enter' && openLightbox(photo)}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt || `Photo ${index + 1}`}
-              width={photo.width || 1000}
-              height={photo.height || 1000}
-              className="w-full h-auto transition-all ease-in-out duration-500 hover:scale-110"
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+      <div className="flex gap-4">
+        {photosInColumns.map((columnPhotos, columnIndex) => (
+          <div key={columnIndex} className="flex-1 flex flex-col gap-4">
+            {columnPhotos.map((photo, photoIndex) => (
+              <div 
+                key={photo.id || photoIndex}
+                className="relative cursor-pointer overflow-hidden"
+                role="button"
+                tabIndex={0}
+                aria-label={`Open ${photo.alt || `Photo ${photoIndex + 1}`} in lightbox`}
+                onClick={() => openLightbox(photo)}
+                onKeyDown={(e) => e.key === 'Enter' && openLightbox(photo)}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt || `Photo ${photoIndex + 1}`}
+                  width={photo.width || 1000}
+                  height={photo.height || 1000}
+                  className="w-full h-auto transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+            ))}
           </div>
         ))}
       </div>

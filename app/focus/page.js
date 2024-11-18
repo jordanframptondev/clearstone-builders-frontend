@@ -15,14 +15,14 @@ export default async function Contact() {
     const textHtml = toHTML(text);
     return (
         <>
-            <div className="fixed top-0 left-0 w-[100vw] h-[100vh]">
+            <div className="fixed top-0 left-0 w-screen h-screen">
                 <Image
                     src={imageUrl}
                     alt="Background Image"
                     width={1920}
                     height={1080}
                     priority={true}
-                    className="fade-in-background absolute inset-0 h-full w-full object-cover"
+                    className="fade-in-background absolute inset-0 h-screen w-screen object-cover"
                 />
             </div>
 
